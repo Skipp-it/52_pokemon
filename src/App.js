@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import NavBar from "./services/component/navbar";
-import PokemonList from "./services/component/pokemonList";
 import NotFound from "./services/component/notFound";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
-import TypeList from "./services/component/typeList";
-import Pokemon from "./services/component/pokemon";
-import Type from "./services/component/type";
 import PokemonH from "./services/component/hooks/pokemonH";
+import TypeListH from "./services/component/hooks/typeList";
+import TypeH from "./services/component/hooks/type";
+import PokemonListH from "./services/component/hooks/pokemonListH";
 
 class App extends Component {
   render() {
@@ -25,10 +24,10 @@ class App extends Component {
             ></Route>
             <Route
               path="/type/:id"
-              render={(props) => <Type details="details" {...props} />}
+              render={(props) => <TypeH details="details" {...props} />}
             ></Route>
-            <Route path="/pokemons" component={PokemonList} />
-            <Route path="/types" component={TypeList} />
+            <Route path="/pokemons" component={PokemonListH} />
+            <Route path="/types" component={TypeListH} />
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" exact to="/pokemons" />
             <Redirect to="/not-found" />

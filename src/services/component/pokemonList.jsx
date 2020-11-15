@@ -8,11 +8,11 @@ class PokemonList extends Component {
     posts: [],
   };
 
+  //live Hook
   async componentDidMount() {
     //pending > resolved (success) OR rejected (failure)
     const result = await http.get(config.apiEndpoint + "/pokemon");
     const posts = [...result.data.results];
-    console.log(posts.length);
     this.setState({ posts });
   }
 

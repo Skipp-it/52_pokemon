@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-function PokemonH(posts) {
-  console.log(posts.match);
+function PokemonH(pokemon) {
   return (
     <div>
-      <div>Name: {posts.match.params.id}</div>
+      <div>Name: {pokemon.match.params.id}</div>
     </div>
   );
 }
